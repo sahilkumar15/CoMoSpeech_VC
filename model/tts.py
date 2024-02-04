@@ -11,13 +11,6 @@ from model.utils import sequence_mask, generate_path, duration_loss, fix_len_com
 from model.como import Como
 # from model.como_zero import Como
 
-
-
-
-
-
-
-
 class Comospeech(BaseModule):
     def __init__(self, n_vocab, n_spks, spk_emb_dim, n_enc_channels, filter_channels, filter_channels_dp, 
                  n_heads, n_enc_layers, enc_kernel, enc_dropout, window_size, 
@@ -42,7 +35,7 @@ class Comospeech(BaseModule):
         self.encoder = TextEncoder(n_vocab, n_feats, n_enc_channels, 
                                    filter_channels, filter_channels_dp, n_heads, 
                                    n_enc_layers, enc_kernel, enc_dropout, window_size)
-        self.decoder = Como(teacher)  
+        self.decoder = Como( teacher)  
 
     @torch.no_grad()
     def forward(self, x, x_lengths, n_timesteps,spk=None,  length_scale=1.0):

@@ -75,20 +75,21 @@ if __name__ == "__main__":
     else:
         print('comospeech')
 
-    checkpoint_path = 'checkpts/teacher_model.pt'
+    checkpont_path = ".\\checkpts\\teacher.pt"
+
     if teacher:
         model = Comospeech(nsymbols, 1, None, n_enc_channels, filter_channels, filter_channels_dp, 
                         n_heads, n_enc_layers, enc_kernel, enc_dropout, window_size, 
                         n_feats ).cuda()
 
-        optimizer = torch.optim.AdamW(params=model.parameters(), lr=learning_rate)   
+        optimizer = torch.optim.Adam(params=model.parameters(), lr=learning_rate)   
 
     else:
         model = Comospeech(nsymbols, 1, None, n_enc_channels, filter_channels, filter_channels_dp, 
                         n_heads, n_enc_layers, enc_kernel, enc_dropout, window_size, 
                         n_feats,teacher=False).cuda()
-        model = load_teacher_model(model,checkpoint_dir=checkpoint_path) # teacher model path
-        optimizer = torch.optim.AdamW(params=model.decoder.denoise_fn.parameters(), lr=learning_rate)
+        model = load_teacher_model(model,checkpoint_dir=checkpont_path) # teacher model path
+        optimizer = torch.optim.Adam(params=model.decoder.denoise_fn.parameters(), lr=learning_rate)
 
  
 
@@ -108,49 +109,48 @@ if __name__ == "__main__":
         dur_losses = []
         prior_losses = []
         diff_losses = []
-        # with tqdm(loader, total=len(train_dataset)//batch_size) as progress_bar:
-        progress_bar = tqdm(loader, total=len(train_dataset)//batch_size)
-        for batch_idx, batch in enumerate(progress_bar):
-            model.zero_grad()
-            x, x_lengths = batch['x'].cuda(), batch['x_lengths'].cuda()
-            y, y_lengths = batch['y'].cuda(), batch['y_lengths'].cuda()
-            dur_loss, prior_loss, diff_loss = model.compute_loss(x, x_lengths,
-                                                                    y, y_lengths,
-                                                                    out_size=out_size)
-            if teacher:
-                loss = sum([dur_loss, prior_loss, diff_loss])
-            else:
-                loss = diff_loss
+        with tqdm(loader, total=len(train_dataset)//batch_size) as progress_bar:
+            for batch_idx, batch in enumerate(progress_bar):
+                model.zero_grad()
+                x, x_lengths = batch['x'].cuda(), batch['x_lengths'].cuda()
+                y, y_lengths = batch['y'].cuda(), batch['y_lengths'].cuda()
+                dur_loss, prior_loss, diff_loss = model.compute_loss(x, x_lengths,
+                                                                     y, y_lengths,
+                                                                     out_size=out_size)
+                if teacher:
+                    loss = sum([dur_loss, prior_loss, diff_loss])
+                else:
+                    loss = diff_loss
+                    
+                loss.backward()
+
+                enc_grad_norm = torch.nn.utils.clip_grad_norm_(model.encoder.parameters(),
+                                                               max_norm=1)
+                dec_grad_norm = torch.nn.utils.clip_grad_norm_(model.decoder.parameters(),
+                                                               max_norm=1)
+                optimizer.step()
+
+                logger.add_scalar('training/duration_loss', dur_loss.item(),
+                                  global_step=iteration)
+                logger.add_scalar('training/prior_loss', prior_loss.item(),
+                                  global_step=iteration)
+                logger.add_scalar('training/diffusion_loss', diff_loss.item(),
+                                  global_step=iteration)
+                logger.add_scalar('training/encoder_grad_norm', enc_grad_norm,
+                                  global_step=iteration)
+                logger.add_scalar('training/decoder_grad_norm', dec_grad_norm,
+                                  global_step=iteration)
                 
-            loss.backward()
-
-            enc_grad_norm = torch.nn.utils.clip_grad_norm_(model.encoder.parameters(),
-                                                            max_norm=1)
-            dec_grad_norm = torch.nn.utils.clip_grad_norm_(model.decoder.parameters(),
-                                                            max_norm=1)
-            optimizer.step()
-
-            logger.add_scalar('training/duration_loss', dur_loss.item(),
-                                global_step=iteration)
-            logger.add_scalar('training/prior_loss', prior_loss.item(),
-                                global_step=iteration)
-            logger.add_scalar('training/diffusion_loss', diff_loss.item(),
-                                global_step=iteration)
-            logger.add_scalar('training/encoder_grad_norm', enc_grad_norm,
-                                global_step=iteration)
-            logger.add_scalar('training/decoder_grad_norm', dec_grad_norm,
-                                global_step=iteration)
-            
-            dur_losses.append(dur_loss.item())
-            prior_losses.append(prior_loss.item())
-            diff_losses.append(diff_loss.item())
-
-            
-            if batch_idx % 5 == 0:
-                msg = f'Epoch: {epoch}, iteration: {iteration} | dur_loss: {dur_loss.item()}, prior_loss: {prior_loss.item()}, diff_loss: {diff_loss.item() }'
-                progress_bar.set_description(msg)
-            
-            iteration += 1
+                dur_losses.append(dur_loss.item())
+                prior_losses.append(prior_loss.item())
+                diff_losses.append(diff_loss.item())
+ 
+                
+                if batch_idx % 5 == 0:
+                    msg = f'Epoch: {epoch}, iteration: {iteration} | dur_loss: {dur_loss.item()}, prior_loss: {prior_loss.item()}, diff_loss: {diff_loss.item() }'
+                    progress_bar.set_description(msg)
+                
+                iteration += 1
 
         log_msg = 'Epoch %d: duration loss = %.3f ' % (epoch, np.mean(dur_losses))
         log_msg += '| prior loss = %.3f ' % np.mean(prior_losses)
