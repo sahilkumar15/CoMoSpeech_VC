@@ -75,7 +75,8 @@ if __name__ == "__main__":
     else:
         print('comospeech')
 
-    checkpont_path = ".\\checkpts\\teacher.pt"
+    # checkpont_path = ".\\checkpts\\teacher.pt"
+    checkpont_path = ".\\logs\\20230826_student\\model_prof_0.pt"
 
     if teacher:
         model = Comospeech(nsymbols, 1, None, n_enc_channels, filter_channels, filter_channels_dp, 
@@ -188,5 +189,5 @@ if __name__ == "__main__":
                           f'{log_dir}/alignment_{i}.png')
 
         ckpt = model.state_dict()
-        torch.save(ckpt, f=f"{log_dir}/model_{epoch}.pt")
+        torch.save(ckpt, f=f"{log_dir}/model_prof_s{epoch}.pt")
         model.train()

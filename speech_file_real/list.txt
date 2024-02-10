@@ -1,0 +1,50 @@
+/content/TTS-TT2/wavs/1.npy|Now what is the plane for you for next step.
+/content/TTS-TT2/wavs/2.npy|use it first step use it lets test it was binary fist lets see how that is improved but atleast.
+/content/TTS-TT2/wavs/3.npy|Yes first try with binary segmentation lets see what the.
+/content/TTS-TT2/wavs/4.npy|do it first do it one by one
+/content/TTS-TT2/wavs/5.npy|so Finish this one then we talk about next step.
+/content/TTS-TT2/wavs/6.npy|let him try the binary segmentation first lets see whats the results here.
+/content/TTS-TT2/wavs/7.npy|yeah but anyway i cant see the real screen.
+/content/TTS-TT2/wavs/8.npy|as i said last time you focus on majorly hosted from here.
+/content/TTS-TT2/wavs/9.npy|This seems the page is a littlebit the possible can you make the bigger.
+/content/TTS-TT2/wavs/10.npy|So as i said next time first host in desktop so now i think for this you see is annoying reason.
+/content/TTS-TT2/wavs/11.npy|So next time hosted in the desktop so that it would be easier.
+/content/TTS-TT2/wavs/12.npy|you can go back to update here so in this case it takes while so that we dont how what is happeing here.
+/content/TTS-TT2/wavs/13.npy|yes because now it just waste of time because see i believe you changed something but we cannt see it right.
+/content/TTS-TT2/wavs/14.npy|I mean you could use that weight is you have a test did you did you have a test or not yet.
+/content/TTS-TT2/wavs/15.npy|overall it seems fine but it just about the last section of the.
+/content/TTS-TT2/wavs/16.npy|Yeah, I see the similar videos that.
+/content/TTS-TT2/wavs/17.npy|Yes, that's fine. So but as I said, let's let him try them.
+/content/TTS-TT2/wavs/18.npy|Finally, it's commentation first. Let's see what's the results here.
+/content/TTS-TT2/wavs/19.npy|For the fire. What is a previous one?
+/content/TTS-TT2/wavs/20.npy|But anyway, I cannot see the screen. Anyway, so then let's.
+/content/TTS-TT2/wavs/21.npy|So what about your website part.
+/content/TTS-TT2/wavs/22.npy|Did you change that or not Not yet.
+/content/TTS-TT2/wavs/23.npy|So next time, maybe I will talk to you later for the next time. But for this one, yes, you can shoot now for us. Yeah, Professor, the homepage I updated the, the team background, everything I updated.
+/content/TTS-TT2/wavs/24.npy|So now I click the more the same as the pages are a little bit smaller. Can you make it a bigger.
+/content/TTS-TT2/wavs/25.npy|Yes, yes, Professor. But once you click that again, it doesn't work right, learn more or after you click on the more it changes to another button, show less like that.
+/content/TTS-TT2/wavs/26.npy|So now, you have still have the more here it seems weird once you click a.
+/content/TTS-TT2/wavs/27.npy|So now once you click you cannot click it again right.
+/content/TTS-TT2/wavs/28.npy|But anyway, Jesse's out of the park.
+/content/TTS-TT2/wavs/29.npy|Check the description why I did not change.
+/content/TTS-TT2/wavs/30.npy|So as I said, next time, first the host in the desktop. So now I think is because this, you see is a knowing reason is just a big compiling is rebuilding there.
+/content/TTS-TT2/wavs/31.npy|So next time host the desktop so that it will be easier, right.
+/content/TTS-TT2/wavs/32.npy|So yes, so that's the reason I said that next time, please do host it from desktop not here. Did you call that part.
+/content/TTS-TT2/wavs/33.npy|Okay, good. So now who is the next group.
+/content/TTS-TT2/wavs/34.npy|Yes, you can try to level one more data set if you think some part is not covered. It is possible.
+/content/TTS-TT2/wavs/35.npy|That's fine. So the year edition, I got the update that for the grant proposal part. Overall, overall it seems fine but it's just about the last section of the
+/content/TTS-TT2/wavs/36.npy|only in the left section. Yeah. Yeah. Yeah. That GPU stuff, it seems still is not that convincing, right? So you probably need to emphasize, for example, you need to emphasize why. So this time we use, we want to purchase H100 instead of A100. So why we want to use H100 instead of A100? Because A100 is about proposed around three years ago, is a little bit low in terms of our new LM, this kind of 99 models, right? So recently the H100 GPU should be more suitable for us. And also you need to emphasize that we may sometimes, in this case, we may only pursue the eight, 800, right? So in this case, it might not able to trim a large-language model from scratch, right? So it's all design our own large-language model, because typically it needs tons of GPUs, right? But now we just, we have few. But in this case, we can feel free to fine tune some LLMs, right? So in that case, you need to emphasize a little bit about that part.
+/content/TTS-TT2/wavs/37.npy|or you can emphasize how to use or develop some small size of large language model that is also can be fit for our case.
+/content/TTS-TT2/wavs/38.npy|Yes, I mean you definitely need to check about changing to H 100. Why we want to H 100 instead of a 100 here.
+/content/TTS-TT2/wavs/39.npy|Yeah, so let's say this time we only have eight. Can we still try some kind of reasonable small modern rate LMS?
+/content/TTS-TT2/wavs/40.npy|But at least the fine tuning should be there shouldn't be any problem. Yeah, fine tuning should not be a problem. But in terms of retrain, if we have a very large number of datasets, I was still doubt about that part.
+/content/TTS-TT2/wavs/41.npy|Yeah, it's better to give a little bit of estimation. For example, if we have 10 megabytes of data set.
+/content/TTS-TT2/wavs/42.npy|This can be some reasonable numbers, some reasonable data set that you could train on smaller.
+/content/TTS-TT2/wavs/43.npy|TPUs yeah check about this part so that graph it should be fine.
+/content/TTS-TT2/wavs/44.npy|Yeah, this is not an automatic issue. You have to click a small button. Yes or no.
+/content/TTS-TT2/wavs/45.npy|Yes, yes. Yeah, remove that apart. So once someone click on that, we
+/content/TTS-TT2/wavs/46.npy|watch this demo video so then it can automatically play that. You do not need to click on the small button again.
+/content/TTS-TT2/wavs/47.npy|Next time, or you can send me, I'll have the link. So later I will check the text there. Basically, this is more like, and you guys need to prepare how to write down this kind of website. It's like a kind of a summarizing of this project.
+/content/TTS-TT2/wavs/48.npy|Okay, that's fine. Let's go. Okay. Could you elaborate on the role of PPA? What's this? Using gradient descent. Why is it has a gradient descent? Learning of classification.
+/content/TTS-TT2/wavs/49.npy|Okay, so next time you can show me a results about only about training and only about training. Only about training and the test so separate them so that we can know because we usually expect that is a training part it should be very good right but it may be very poor. Let's say how poor it is.
+/content/TTS-TT2/wavs/50.npy|Why is the war you shouldn't care about other people's code, right? So we have to, I can't use that computer.

@@ -2,9 +2,15 @@ from model.utils import fix_len_compatibility
 
 
 # data parameters
-train_filelist_path = 'fs2_txt/train.txt' #same split as in the FastSpeech2 paper
-valid_filelist_path = 'fs2_txt/valid.txt'
-test_filelist_path = 'fs2_txt/test.txt'
+# train_filelist_path = 'fs2_txt/train.txt'
+# valid_filelist_path = 'fs2_txt/valid.txt'
+# test_filelist_path = 'fs2_txt/test.txt'
+
+train_filelist_path = 'speech_file_real/train.txt' 
+valid_filelist_path = 'speech_file_real/valid.txt'
+test_filelist_path = 'speech_file_real/test.txt'
+
+
 cmudict_path = 'resources/cmu_dictionary'
 add_blank = True
 n_feats = 80
@@ -28,13 +34,13 @@ enc_dropout = 0.1
 n_heads = 2
 window_size = 4
 
-teacher = False # true for teacher model, false for consistency distillation
+teacher = True # true for teacher model, false for consistency distillation
 
  
 # training parameters
-log_dir = 'logs/20230826_student' 
+log_dir = 'logs/prof_1' 
 test_size = 2
-n_epochs = 2
+n_epochs = 1000
 batch_size =  8  
 learning_rate = 1e-4
 seed = 1234

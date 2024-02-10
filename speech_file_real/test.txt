@@ -1,0 +1,5 @@
+LJSpeech/wavs_prof/46.wav|watch this demo video so then it can automatically play that. You do not need to click on the small button again.
+LJSpeech/wavs_prof/47.wav|Next time, or you can send me, I'll have the link. So later I will check the text there. Basically, this is more like, and you guys need to prepare how to write down this kind of website. It's like a kind of a summarizing of this project.
+LJSpeech/wavs_prof/48.wav|Okay, that's fine. Let's go. Okay. Could you elaborate on the role of PPA? What's this? Using gradient descent. Why is it has a gradient descent? Learning of classification.
+LJSpeech/wavs_prof/49.wav|Okay, so next time you can show me a results about only about training and only about training. Only about training and the test so separate them so that we can know because we usually expect that is a training part it should be very good right but it may be very poor. Let's say how poor it is.
+LJSpeech/wavs_prof/50.wav|Why is the war you shouldn't care about other people's code, right? So we have to, I can't use that computer.

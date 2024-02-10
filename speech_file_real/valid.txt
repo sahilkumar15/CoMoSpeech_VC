@@ -1,0 +1,10 @@
+LJSpeech/wavs_prof/36.wav|only in the left section. Yeah. Yeah. Yeah. That GPU stuff, it seems still is not that convincing, right? So you probably need to emphasize, for example, you need to emphasize why. So this time we use, we want to purchase H100 instead of A100. So why we want to use H100 instead of A100? Because A100 is about proposed around three years ago, is a little bit low in terms of our new LM, this kind of 99 models, right? So recently the H100 GPU should be more suitable for us. And also you need to emphasize that we may sometimes, in this case, we may only pursue the eight, 800, right? So in this case, it might not able to trim a large-language model from scratch, right? So it's all design our own large-language model, because typically it needs tons of GPUs, right? But now we just, we have few. But in this case, we can feel free to fine tune some LLMs, right? So in that case, you need to emphasize a little bit about that part.
+LJSpeech/wavs_prof/37.wav|or you can emphasize how to use or develop some small size of large language model that is also can be fit for our case.
+LJSpeech/wavs_prof/38.wav|Yes, I mean you definitely need to check about changing to H 100. Why we want to H 100 instead of a 100 here.
+LJSpeech/wavs_prof/39.wav|Yeah, so let's say this time we only have eight. Can we still try some kind of reasonable small modern rate LMS?
+LJSpeech/wavs_prof/40.wav|But at least the fine tuning should be there shouldn't be any problem. Yeah, fine tuning should not be a problem. But in terms of retrain, if we have a very large number of datasets, I was still doubt about that part.
+LJSpeech/wavs_prof/41.wav|Yeah, it's better to give a little bit of estimation. For example, if we have 10 megabytes of data set.
+LJSpeech/wavs_prof/42.wav|This can be some reasonable numbers, some reasonable data set that you could train on smaller.
+LJSpeech/wavs_prof/43.wav|TPUs yeah check about this part so that graph it should be fine.
+LJSpeech/wavs_prof/44.wav|Yeah, this is not an automatic issue. You have to click a small button. Yes or no.
+LJSpeech/wavs_prof/45.wav|Yes, yes. Yeah, remove that apart. So once someone click on that, we
