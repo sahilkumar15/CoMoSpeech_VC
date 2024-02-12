@@ -67,7 +67,7 @@ if __name__ == '__main__':
         texts = [line.strip() for line in f.readlines()]
     cmu = cmudict.CMUDict('./resources/cmu_dictionary')
     tall=[]
-    save_dir='out/'
+    save_dir='out_harsha/'
     os.makedirs(save_dir,exist_ok=True) 
     with torch.no_grad():
         for i, text in enumerate(texts):

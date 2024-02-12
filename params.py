@@ -6,9 +6,19 @@ from model.utils import fix_len_compatibility
 # valid_filelist_path = 'fs2_txt/valid.txt'
 # test_filelist_path = 'fs2_txt/test.txt'
 
-train_filelist_path = 'speech_file_real/train.txt' 
-valid_filelist_path = 'speech_file_real/valid.txt'
-test_filelist_path = 'speech_file_real/test.txt'
+# train_filelist_path = 'file_list/speech_file_real/train.txt' 
+# valid_filelist_path = 'file_list/speech_file_real/valid.txt'
+# test_filelist_path = 'file_list/speech_file_real/test.txt'
+
+# train_filelist_path = 'speech_file_real/train.txt' 
+# valid_filelist_path = 'speech_file_real/valid.txt'
+# test_filelist_path = 'speech_file_real/test.txt'
+
+# "CoMoSpeech_VC/file_list/list_harsha"
+
+train_filelist_path = 'file_list/list_harsha/train.txt' 
+valid_filelist_path = 'file_list/list_harsha/valid.txt'
+test_filelist_path = 'file_list/list_harsha/test.txt'
 
 
 cmudict_path = 'resources/cmu_dictionary'
@@ -38,11 +48,11 @@ teacher = True # true for teacher model, false for consistency distillation
 
  
 # training parameters
-log_dir = 'logs/prof_2' 
+log_dir = 'logs/harsha_1' 
 test_size = 2
-n_epochs = 10000
+n_epochs = 15000
 batch_size =  8  
 learning_rate = 1e-4
 seed = 1234
-save_every = 1000 
+save_every = 2000
 out_size =  fix_len_compatibility(2*22050//256)
