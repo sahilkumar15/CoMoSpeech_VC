@@ -38,11 +38,11 @@ teacher = True # true for teacher model, false for consistency distillation
 
  
 # training parameters
-log_dir = 'logs/prof_1' 
+log_dir = 'logs/prof_2' 
 test_size = 2
-n_epochs = 1000
+n_epochs = 10000
 batch_size =  8  
 learning_rate = 1e-4
 seed = 1234
-save_every = 10 
+save_every = 1000 
 out_size =  fix_len_compatibility(2*22050//256)

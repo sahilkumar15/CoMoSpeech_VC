@@ -189,5 +189,5 @@ if __name__ == "__main__":
                           f'{log_dir}/alignment_{i}.png')
 
         ckpt = model.state_dict()
-        torch.save(ckpt, f=f"{log_dir}/model_prof_s{epoch}.pt")
+        torch.save(ckpt, f=f"{log_dir}/model_prof_{epoch}.pt")
         model.train()
