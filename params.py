@@ -16,10 +16,17 @@ from model.utils import fix_len_compatibility
 
 # "CoMoSpeech_VC/file_list/list_harsha"
 
-train_filelist_path = 'file_list/list_harsha/train.txt' 
-valid_filelist_path = 'file_list/list_harsha/valid.txt'
-test_filelist_path = 'file_list/list_harsha/test.txt'
+# train_filelist_path = 'file_list/list_harsha/train.txt' 
+# valid_filelist_path = 'file_list/list_harsha/valid.txt'
+# test_filelist_path = 'file_list/list_harsha/test.txt'
 
+train_filelist_path = 'Audio_generation2/prof_audio/train.txt' 
+valid_filelist_path = 'Audio_generation2/prof_audio/valid.txt'
+test_filelist_path = 'Audio_generation2/prof_audio/test.txt'
+
+# train_filelist_path = 'Audio_generation/list_prof/train.txt' 
+# valid_filelist_path = 'Audio_generation/list_prof/valid.txt'
+# test_filelist_path = 'Audio_generation/list_prof/test.txt'
 
 cmudict_path = 'resources/cmu_dictionary'
 add_blank = True
@@ -48,11 +55,11 @@ teacher = True # true for teacher model, false for consistency distillation
 
  
 # training parameters
-log_dir = 'logs/harsha_1' 
+log_dir = 'logs/prof_2' 
 test_size = 2
-n_epochs = 15000
-batch_size =  8  
+n_epochs = 100
+batch_size =  4  
 learning_rate = 1e-4
 seed = 1234
-save_every = 2000
+save_every = 10
 out_size =  fix_len_compatibility(2*22050//256)

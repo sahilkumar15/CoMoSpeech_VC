@@ -46,19 +46,41 @@ class TextMelDataset(torch.utils.data.Dataset):
     #                           self.win_length, self.f_min, self.f_max, center=False).squeeze()
     #     return mel
     
+    
+    import librosa
+
     def get_mel(self, filepath):
+        try:
+            audio, sr = ta.load(filepath)
+
+            # Resample audio if the sample rate is different from self.sample_rate
+            if sr != self.sample_rate:
+                resampler = ta.transforms.Resample(sr, self.sample_rate)
+                audio = resampler(audio)
+                sr = self.sample_rate
+
+            mel = mel_spectrogram(audio, self.n_fft, self.n_mels, sr, self.hop_length,
+                                self.win_length, self.f_min, self.f_max, center=False).squeeze()
+            return mel
+
+        except Exception as e:
+            print(f"Error processing file {filepath}: {e}")
+            raise RuntimeError("Failed to decode audio.")
+
+
+    # def get_mel(self, filepath):
         
-        audio, sr = ta.load(filepath)
+    #     audio, sr = ta.load(filepath)
 
-        # Resample audio if the sample rate is different from self.sample_rate
-        if sr != self.sample_rate:
-            resampler = ta.transforms.Resample(sr, self.sample_rate)
-            audio = resampler(audio)
-            sr = self.sample_rate
+    #     # Resample audio if the sample rate is different from self.sample_rate
+    #     if sr != self.sample_rate:
+    #         resampler = ta.transforms.Resample(sr, self.sample_rate)
+    #         audio = resampler(audio)
+    #         sr = self.sample_rate
 
-        mel = mel_spectrogram(audio, self.n_fft, self.n_mels, sr, self.hop_length,
-                            self.win_length, self.f_min, self.f_max, center=False).squeeze()
-        return mel
+    #     mel = mel_spectrogram(audio, self.n_fft, self.n_mels, sr, self.hop_length,
+    #                         self.win_length, self.f_min, self.f_max, center=False).squeeze()
+    #     return mel
 
 
     def get_text(self, text, add_blank=True):

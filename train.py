@@ -15,7 +15,11 @@ from model.tts import  Comospeech
 from data import TextMelDataset, TextMelBatchCollate
 from utils import plot_tensor, save_plot,load_teacher_model
 from text.symbols import symbols
- 
+
+
+ # Set the audio backend to 'sox_io'
+import torchaudio
+torchaudio.set_audio_backend("sox_io")
 
 train_filelist_path = params.train_filelist_path
 valid_filelist_path = params.test_filelist_path
@@ -83,14 +87,14 @@ if __name__ == "__main__":
                         n_heads, n_enc_layers, enc_kernel, enc_dropout, window_size, 
                         n_feats ).cuda()
 
-        optimizer = torch.optim.Adam(params=model.parameters(), lr=learning_rate)   
+        optimizer = torch.optim.AdamW(params=model.parameters(), lr=learning_rate)   
 
     else:
         model = Comospeech(nsymbols, 1, None, n_enc_channels, filter_channels, filter_channels_dp, 
                         n_heads, n_enc_layers, enc_kernel, enc_dropout, window_size, 
                         n_feats,teacher=False).cuda()
         model = load_teacher_model(model,checkpoint_dir=checkpont_path) # teacher model path
-        optimizer = torch.optim.Adam(params=model.decoder.denoise_fn.parameters(), lr=learning_rate)
+        optimizer = torch.optim.AdamW(params=model.decoder.denoise_fn.parameters(), lr=learning_rate)
 
  
 
